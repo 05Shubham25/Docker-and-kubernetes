@@ -1,0 +1,9 @@
+docker rm <image ID> --------> to remove container 
+docker rmi <image ID> ---------> to remove images
+docker image prune -----> to remove unused images
+
+docker logs -f <NAMES>  ----> to get following logs
+
+
+docker cp dummy/. stoic_khayyam:/test ------> to copy folder/ files from local host machine to running container
+docker cp stoic_khayyam:/test dummy  -------> to copy files/folder from running container to local host
