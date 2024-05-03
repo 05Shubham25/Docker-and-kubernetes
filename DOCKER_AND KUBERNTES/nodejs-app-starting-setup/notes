@@ -2,8 +2,25 @@ docker rm <image ID> --------> to remove container
 docker rmi <image ID> ---------> to remove images
 docker image prune -----> to remove unused images
 
+docker image inspect <image ID> --------> to inspect images
+
+docker logs <container ID> --------> to get logs of container
+
+
 docker logs -f <NAMES>  ----> to get following logs
 
 
 docker cp dummy/. stoic_khayyam:/test ------> to copy folder/ files from local host machine to running container
 docker cp stoic_khayyam:/test dummy  -------> to copy files/folder from running container to local host
+
+
+
+docker share and pull
+
+docker push IMAGE_NAME --------> to push image to docker hub
+docker pull IMAGE_NAME --------> to pull image from docker hub
+
+
+docker run -p 3000:80 --rm shubham0405/node-hello-world:1.0 --------> to run container and map port 3000 to 80
+
+docker run -d -p 8080:80 --name myapp myapp:1.0 --------> to run container in background and map port 8080 to 80
