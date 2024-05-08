@@ -41,7 +41,26 @@ docker run -d -p 8080:80 --name myapp myapp:1.0 --------> to run container in ba
 docker tag IMAGE_NAME shubham0405/node-hello-world:1.0 --------> to tag image
 
 
+docker volume --help --------> to get help for volume
+
+docker volume ls --------> to list volumes
+
+
+there are two types of of external Data Storage in Docker
+1. Volumes   ------>  managed by Docker
+eg Anonymous Volume, Named Volume, Host Volume
+2. Bind Mounts   ------>  managed by user
+eg Bind Mounts
+
+
+In data-volume 01-starting-setup, we have created a volume and mounted it to container
+initially we would loose data if we remove container but with volume we can persist data
+now we are using Volume to persist data
+so our data remains even if we remove container.
 
 
 
+docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback feedback-node:volumes --------> to run container and map port 3000 to 80, -d to run in background, --rm to remove container after stopping, -v to mount volume, feedback is volume name, feedback-node:volumes is image name
 
+
+docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback -v  "C:\Users\Asus\Desktop\DOCKER_AND_KUBERNETES\DOCKER_AND KUBERNTES\nodejs-app-starting-setup\data-volumes-01-starting-setup:/app" feedback-node:volumes --------> to run container and map port 3000 to 80, -d to run in background, --rm to remove container after stopping, -v to mount volume, feedback is volume name, feedback-node:volumes is image name, -v to mount host volume, "C:\Users\Asus\Desktop\DOCKER_AND_KUBERNETES\DOCKER_AND KUBERNTES\nodejs-app-starting-setup\data-volumes-01-starting-setup:/app" is host volume path    
